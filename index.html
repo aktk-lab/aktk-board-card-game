@@ -1,0 +1,25 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0e1117" />
+  <link rel="manifest" href="./manifest.json" />
+  <!-- iOSのホーム追加用 -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body>
+  <!-- 既存のゲームUI … -->
+
+  <script>
+    // PWA登録
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js");
+      });
+    }
+    // 深い直リンク用のハッシュ（例）
+    if (location.hash === "#cards") { /* カード画面に切替 */ }
+    if (location.hash === "#board") { /* ボード画面に切替 */ }
+  </script>
+</body>
